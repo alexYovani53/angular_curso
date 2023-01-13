@@ -15,4 +15,12 @@ export class HeroeComponent{
     get capitalizarNombre(){
         return this.nombre.toUpperCase();
     }
+
+    cambiarNombre():void{
+        this.nombre = 'Spiderman';
+    }
+
+    cambiarEdad(): void {
+        this.edad = 30
+    }
 }
