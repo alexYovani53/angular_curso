@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class MainPageComponent {
 
+
+  // agregar(event: any){
+  //   event.preventDefault()
+  //   console.log(event)
+  // }
+
+  agregar(){
+    console.log("prueba")
+  }
 }
