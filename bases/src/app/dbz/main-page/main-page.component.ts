@@ -36,4 +36,8 @@ export class MainPageComponent {
   // cambiarPoder(event: any){
   //   this.nuevo.poder = event.target.value
   // }
+
+  agregarNuevoPersonaje(personaje: Personaje){
+    this.personajes.push(personaje)
+  }
 }
