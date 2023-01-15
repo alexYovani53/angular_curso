@@ -2,13 +2,16 @@
 
 <div class="row">
     <div class="col">
-        <h3>Personajes</h3>
+        <app-personajes [data]="personajes">
+
+        </app-personajes>
+        <!-- <h3>Personajes</h3>
         <hr>
         <ul>
             <li *ngFor="let item of personajes">
                 {{item.nombre}} - {{item.poder | number }}
             </li>
-        </ul>
+        </ul> -->
     </div>
     <div class="col">
         <h3>Agregar</h3>
