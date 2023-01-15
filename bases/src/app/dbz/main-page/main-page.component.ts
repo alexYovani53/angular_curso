@@ -28,16 +28,6 @@ export class MainPageComponent {
   //   console.log(event)
   // }
 
-  agregar(){
-    if (this.nuevo.nombre.trim().length === 0 ) {
-      return;
-    }
-    this.personajes.push(this.nuevo);
-    this.nuevo = {
-      nombre: "", poder: 0
-    };
-    console.log(this.nuevo)
-  }
 
   // cambiarNombre(event: any){
   //   this.nuevo.nombre = event.target.value
