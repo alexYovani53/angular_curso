@@ -7,36 +7,27 @@ export class DbzService{
         console.log("Servicio inicializado")
     }
 
-    personajes: Personaje[] = [
-        {
-          nombre: "Goku", 
-          poder: 14000
-        }, 
-        {
-          nombre: "Veget", 
-          poder: 14045
-        }
-      ]
-    
-      nuevo:Personaje = {
-        nombre: "Trunks", 
+    private _personajes: Personaje[] = [
+      {
+        nombre: "Goku", 
         poder: 14000
+      }, 
+      {
+        nombre: "Veget", 
+        poder: 14045
       }
-      // agregar(event: any){
-      //   event.preventDefault()
-      //   console.log(event)
-      // }
-    
-    
-      // cambiarNombre(event: any){
-      //   this.nuevo.nombre = event.target.value
-      // }
-    
-      // cambiarPoder(event: any){
-      //   this.nuevo.poder = event.target.value
-      // }
-    
-      agregarNuevoPersonaje(personaje: Personaje){
-        this.personajes.push(personaje)
-      }
+    ]
+
+    get personajes(): Personaje[] {
+      return [...this._personajes];
+    }
+  
+    nuevo:Personaje = {
+      nombre: "Trunks", 
+      poder: 14000
+    }
+
+    agregarNuevoPersonaje(personaje: Personaje){
+      this.personajes.push(personaje)
+    }
 }
