@@ -1,3 +1,10 @@
 <form (ngSubmit)="enviar()" autocomplete="off">
-    <input type="text" class="form-control" name="termino" placeholder="Buscar pais" [(ngModel)]="termino">
+    <input 
+        type="text" 
+        class="form-control" 
+        name="termino" 
+        placeholder="Buscar pais" 
+        [(ngModel)]="termino"
+        (input)="teclaPresionada($event)"
+        >
 </form>

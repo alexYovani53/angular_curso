@@ -18,6 +18,10 @@ export class PorPaisComponent {
 
   }
 
+  sugerencias(termino:string){
+    this.hayError = false
+  }
+
   enviar(termino: string) {
     this.termino = termino;
     this.hayError = false;
