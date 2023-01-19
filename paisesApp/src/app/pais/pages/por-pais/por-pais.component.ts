@@ -18,7 +18,8 @@ export class PorPaisComponent {
 
   }
 
-  enviar() {
+  enviar(termino: string) {
+    this.termino = termino;
     this.hayError = false;
     this.paisService.buscarPorPais(this.termino)
       .subscribe({
