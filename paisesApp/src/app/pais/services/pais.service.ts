@@ -21,4 +21,13 @@ export class PaisService {
     //   )
   }
 
+  buscarPorRegion(termino: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/capital/${termino}`
+    return this.http.get<Country[]>(url);
+    // return this.http.get(url)
+    //   .pipe(
+    //     catchError(err => of([]))
+    //   )
+  }
+
 }
