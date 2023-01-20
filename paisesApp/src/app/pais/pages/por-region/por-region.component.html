@@ -11,11 +11,23 @@
         'btn-primary': regionActiva === region,
         'btn-outline-primary': regionActiva !== region
         }" -->
+        <button *ngFor="let cod of regiones2"
+            class="me-2 mt-2"
+            [class]="getClassCSS(cod)"
+            (click)="activar(cod)">
+            {{cod}}
+        </button>
         <button *ngFor="let region of regiones"
-            class="me-2 "
+            class="me-2 mt-2 "
             [class]="getClassCSS(region)"
-            (click)="activar(region)">
+            (click)="activar2(region)">
             {{region}}
         </button>
+    </div>
+</div>
+
+<div class="row" *ngIf="paises.length> 0">
+    <div class="col">
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
     </div>
 </div>

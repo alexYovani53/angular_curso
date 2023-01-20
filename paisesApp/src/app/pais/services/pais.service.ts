@@ -21,7 +21,7 @@ export class PaisService {
     //   )
   }
 
-  buscarPorRegion(termino: string): Observable<Country[]> {
+  buscarPorcapital(termino: string): Observable<Country[]> {
     const url = `${this.apiUrl}/capital/${termino}`
     return this.http.get<Country[]>(url);
     // return this.http.get(url)
@@ -33,6 +33,23 @@ export class PaisService {
   buscarPorId(id:string): Observable<Country> {
     const url = `${this.apiUrl}/alpha/${id}`
     return this.http.get<Country>(url);
+    // return this.http.get(url)
+    //   .pipe(
+    //     catchError(err => of({}))
+    //   )
+  }
+
+  buscarPorRegio(codeRegion:string): Observable<Country[]> {
+    const url = `${this.apiUrl}/regionalbloc/${codeRegion}`
+    return this.http.get<Country[]>(url);
+    // return this.http.get(url)
+    //   .pipe(
+    //     catchError(err => of({}))
+    //   )
+  }
+  buscarPorRegion2(regionName:string): Observable<Country[]> {
+    const url = `${this.apiUrl}/region/${regionName}`
+    return this.http.get<Country[]>(url);
     // return this.http.get(url)
     //   .pipe(
     //     catchError(err => of({}))
