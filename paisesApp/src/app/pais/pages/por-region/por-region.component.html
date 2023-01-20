@@ -13,8 +13,7 @@
         }" -->
         <button *ngFor="let region of regiones"
             class="me-2 "
-            [class]=" (region !==regionActiva) ? 'btn btn-outline-primary' :
-            'btn btn-primary'"
+            [class]="getClassCSS(region)"
             (click)="activar(region)">
             {{region}}
         </button>
