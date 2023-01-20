@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class PorRegionComponent {
 
+  regiones : string[] = ["Africa", "Americas", "Asia", "Europe", "Oceania"]
+
+  regionActiva : string = ""
+
+  activar(region:string){
+    this.regionActiva = region
+  }
 }
