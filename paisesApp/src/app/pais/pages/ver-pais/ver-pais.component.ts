@@ -13,6 +13,7 @@ import { PaisService } from '../../services/pais.service';
 export class VerPaisComponent implements OnInit{
 
   country? : Country ;
+  loading: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute, private paisService:PaisService) {}
 
@@ -24,11 +25,13 @@ export class VerPaisComponent implements OnInit{
     //   })
     // })
 
+    this.loading = true;
     this.activatedRoute.params
       .pipe(
         switchMap((param : any) => this.paisService.buscarPorId(param.id))
       )
       .subscribe(resp=> {
+        this.loading = false;
         this.country = resp;
       });
   }
