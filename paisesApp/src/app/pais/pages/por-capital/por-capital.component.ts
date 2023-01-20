@@ -17,7 +17,7 @@ export class PorCapitalComponent {
 
   }
 
-  enviar(termino: string) {
+  buscar(termino: string) {
     this.termino = termino;
     this.hayError = false;
     this.paisService.buscarPorcapital(this.termino)

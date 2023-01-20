@@ -1,14 +1,20 @@
 <h2>Por País</h2>
-
 <hr>
-
 <div class="row">
     <div class="col">
-        <app-pais-input (parentAction)="enviar($event)"
+        <app-pais-input (parentAction)="buscar($event)"
             (debounce)="sugerencias($event)" placeholder="Por pais"></app-pais-input>
     </div>
 </div>
-
+<ul class="list-group" *ngIf="mostrarSugerencias">
+    <li class="list-group-item list-group-item-action" *ngFor="let item of
+        sugerenciasP">
+        <a class="nav-link" [routerLink]="[ '/pais', item.alpha2Code ]">{{item.name}}</a>
+    </li>
+    <li class="list-group-item list-group-item-action">
+        <a class="nav-link" (click)="buscarSugerido()">Buscar {{termino}}</a>
+    </li>
+</ul>
 <hr>
 
 <div class="alert alert-danger" *ngIf="hayError">

@@ -19,7 +19,7 @@ export class PaisInputComponent implements OnInit {
   ngOnInit(): void {
     this.debouncer
       .pipe(
-        debounceTime(300)
+        debounceTime(100)
       )
       .subscribe(terminoBusqueda => {
         console.log('debouncer: ', terminoBusqueda)
