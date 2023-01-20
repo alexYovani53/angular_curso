@@ -30,5 +30,26 @@
             </ul>
         </div>
     </div>
+    <h3>Traducciones</h3>
+    <hr>
+    <div class="row" *ngIf="country">
+        <div class="col-6">
+            <span class="badge bg-primary m-1">{{country.translations.br}}</span>
+            <span class="badge bg-primary m-1">{{country.translations.de}}</span>
+            <span class="badge bg-primary m-1">{{country.translations.es}}</span>
+            <span class="badge bg-primary m-1">{{country.translations.fa}}</span>
+            <span class="badge bg-primary m-1">{{country.translations.fr}}</span>
+            <span class="badge bg-primary m-1">{{country.translations.hr}}</span>
+            <span class="badge bg-primary m-1">{{country.translations.hu}}</span>
+            <span class="badge bg-primary m-1">{{country.translations.it}}</span>
+            <span class="badge bg-primary m-1">{{country.translations.ja}}</span>
+            <span class="badge bg-primary m-1">{{country.translations.nl}}</span>
+            <span class="badge bg-primary m-1">{{country.translations.pt}}</span>
+        </div>
+    </div>
 
+
+    <pre class="col" *ngIf="country">
+        {{country | json}}
+    </pre>
 </ng-template>
