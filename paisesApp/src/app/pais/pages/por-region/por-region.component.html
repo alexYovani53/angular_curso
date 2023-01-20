@@ -1,9 +1,10 @@
+<div class="animate__animated animate__fadeIn">
 
-<h3>Buscar por regions <small>{{regionActiva}}</small></h3>
-<hr>
+    <h3>Buscar por regions <small>{{regionActiva}}</small></h3>
+    <hr>
+    <h5>Selecciones la region</h5>
 
-<h5>Selecciones la region</h5>
-
+</div>
 <div class="row">
     <div class="col">
         <!-- [class.btn-primary]="region === regionActiva" -->
@@ -27,7 +28,7 @@
 </div>
 
 <div class="row" *ngIf="paises.length> 0">
-    <div class="col">
+    <div class="col animate__animated animate__fadeIn">
         <app-pais-tabla [paises]="paises"></app-pais-tabla>
     </div>
 </div>
