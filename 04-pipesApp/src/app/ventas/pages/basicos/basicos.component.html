@@ -49,7 +49,14 @@
         <li> fecha | date: 'mediumTime'</li>
         <li> fecha | date: 'longTime'</li>
         <li> fecha | date: 'fullTime'</li>
-        <li> fecha | date: 'd - MMM  - yyyy'</li>
+        <li> fecha | date: 'd - MMM - yyyy'</li>
+      </ul>
+      <hr>
+      <ul>
+        <li> fecha | date: 'long': 'GMT-5' </li>
+        <li> fecha | date: 'long': '':'en'</li>
+        <li> fecha | date: 'long': '':'es-GT'</li>
+        <li> fecha | date: 'long': '':'fr'</li>
       </ul>
     </p-card>
   </div>
@@ -71,6 +78,13 @@
         <li>{{fecha | date: 'longTime'}}</li>
         <li>{{fecha | date: 'fullTime'}}</li>
         <li>{{fecha | date: 'd - MMMM - yyyy'}}</li>
+      </ul>
+      <hr>
+      <ul>
+        <li>{{fecha | date: 'long': 'GMT-5'}}</li>
+        <li>{{fecha | date: 'long': '':'en'}}</li>
+        <li>{{fecha | date: 'long': '':'es-GT'}}</li>
+        <li>{{fecha | date: 'long': '':'fr'}}</li>
       </ul>
     </p-card>
   </div>
