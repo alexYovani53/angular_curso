@@ -9,5 +9,7 @@ import { Component } from '@angular/core';
 export class BasicosComponent {
   nombreLower: string = "alex";
   nombreUpper: string = "YOVANI";
-  nombreCompleto: string = "Alex Yovani JeroNiMo ToMas"
+  nombreCompleto: string = "Alex Yovani JeroNiMo ToMas";
+
+  fecha: Date =  new Date();
 }
