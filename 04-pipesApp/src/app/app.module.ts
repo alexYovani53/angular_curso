@@ -11,6 +11,9 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es-GT';
 import localeFr from '@angular/common/locales/fr';
 
+
+
+
 registerLocaleData(localeEs);
 registerLocaleData(localeFr);
 

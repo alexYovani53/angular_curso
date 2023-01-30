@@ -12,4 +12,17 @@
       {{ventasNetas + 1000| number : '1.2-2'}}
     </p-card>
   </div>
+
+  <div class="col-4">
+    <p-card header="Ventas Brutas" subheader="del presente año">
+      <p>{{ventasNetas | currency : 'GTQ' : 'symbol-narrow' : '1.0-4' : 'es-GT'}}</p>
+    </p-card>
+  </div>
+
+
+  <div class="col-4">
+    <p-card header="Ganancia porcentual" subheader="del presente año">
+      <p>{{porcentaje | percent : '2.2-2'}}</p>
+    </p-card>
+  </div>
 </div>
