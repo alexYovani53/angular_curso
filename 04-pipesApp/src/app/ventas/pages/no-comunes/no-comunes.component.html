@@ -1,1 +1,20 @@
-<p>no-comunes works!</p>
+<div class="text-layout">
+  <h1>Pipes no tan comunes</h1>
+  <p>Pipes no incluídos</p>
+</div>
+
+<div class="grid">
+  <div class="col-12 sm:col-9 md:col-6">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+      Saludos {{ nombre }}, es un placer
+      {{genero | i18nSelect: invitacinMapa }}
+      a nuestro evento.
+    </p-fieldset>
+  </div>
+
+  <div class="col-12 sm:col-9 md:col-6">
+    <p-fieldset legend="i18nPlurarl Pipe" [toggleable]="true">
+      Content
+    </p-fieldset>
+  </div>
+</div>
