@@ -7,14 +7,21 @@
   <div class="col-12 sm:col-9 md:col-6">
     <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
       Saludos {{ nombre }}, es un placer
-      {{genero | i18nSelect: invitacinMapa }}
+      {{ genero | i18nSelect : invitacinMapa }}
       a nuestro evento.
+      <hr />
+      {{
+        'Saludos {{ nombre
+      }}, es un placer {{ genero | i18nSelect : invitacinMapa }} a nuestro
+      evento.' }}
     </p-fieldset>
   </div>
 
   <div class="col-12 sm:col-9 md:col-6">
     <p-fieldset legend="i18nPlurarl Pipe" [toggleable]="true">
-      Content
+      Actualmente {{ clientes.length | i18nPlural : clientesMapa }}
+      <hr />
+      {{'Actualmente {{ clientes.length | i18nPlural : clientesMapa }}'}}
     </p-fieldset>
   </div>
 </div>
