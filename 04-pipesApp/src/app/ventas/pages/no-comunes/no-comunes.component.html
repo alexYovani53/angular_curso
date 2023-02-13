@@ -18,6 +18,9 @@
 
 
 
+
+
+
       }}, es un placer {{ genero | i18nSelect : invitacinMapa }} a nuestro
       evento.' }}
 
@@ -55,21 +58,31 @@
     </p-fieldset>
   </div>
 
-
   <div class="col-12 sm:col-9 md:col-6">
     <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <p>{{'{{ clientes | slice : 0 : 2 }}'}}</p>
       <b>Original</b>
-      <pre>{{clientes}}</pre>
+      <pre>{{ clientes }}</pre>
       <b>slice:0</b>
-      <pre>{{ clientes | slice:0 }}</pre>
+      <pre>{{ clientes | slice : 0 }}</pre>
 
       <b>slice:0:2</b>
-      <pre>{{ clientes | slice:0:2 }}</pre>
-
+      <pre>{{ clientes | slice : 0 : 2 }}</pre>
 
       <b>slice:1:2</b>
-      <pre>{{ clientes | slice:1:2 }}</pre>
+      <pre>{{ clientes | slice : 1 : 2 }}</pre>
+    </p-fieldset>
+  </div>
 
+  <div class="col-12 sm:col-9 md:col-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      {{ '*ngFor="let item of persona | keyvalue"' }}
+      <ul>
+        <li *ngFor="let item of persona | keyvalue">
+          <p>{{ item | json }}</p>
+          <b>{{ item.key }}: </b> {{ item.value }}
+        </li>
+      </ul>
     </p-fieldset>
   </div>
 </div>

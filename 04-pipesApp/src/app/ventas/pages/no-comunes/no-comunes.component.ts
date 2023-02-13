@@ -45,4 +45,11 @@ export class NoComunesComponent {
     this.clientes.push("Nuevo");
   }
 
+  // KeyValue Pipe
+  persona: any =  {
+    nombre: "Alex",
+    edad: 35,
+    direccion: "Sumpango Sac."
+  }
+
 }
