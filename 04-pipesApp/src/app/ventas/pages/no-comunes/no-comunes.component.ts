@@ -46,10 +46,26 @@ export class NoComunesComponent {
   }
 
   // KeyValue Pipe
-  persona: any =  {
+  persona: any = {
     nombre: "Alex",
     edad: 35,
     direccion: "Sumpango Sac."
   }
+
+  heroes = [
+    {
+      nombre: 'Superman',
+      vuela: true
+    }, {
+      nombre: 'Batman',
+      vuela: false
+    },     {
+      nombre: 'Tortuga Ninja',
+      vuela: false
+    },     {
+      nombre: 'Iron Man',
+      vuela: true
+    }
+  ];
 
 }
