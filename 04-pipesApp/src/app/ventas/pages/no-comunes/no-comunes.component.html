@@ -12,8 +12,22 @@
       <hr />
       {{
         'Saludos {{ nombre
+
+
+
+
+
+
       }}, es un placer {{ genero | i18nSelect : invitacinMapa }} a nuestro
       evento.' }}
+
+      <button
+        pButton
+        class="p-button p-button-danger p-button-rounded mt-1"
+        (click)="cambiarNombre()"
+      >
+        Cambiar nombre
+      </button>
     </p-fieldset>
   </div>
 
@@ -22,6 +36,40 @@
       Actualmente {{ clientes.length | i18nPlural : clientesMapa }}
       <hr />
       {{'Actualmente {{ clientes.length | i18nPlural : clientesMapa }}'}}
+
+      <div class="row mt-3">
+        <button
+          pButton
+          class="p-button p-button-danger p-button-rounded ml-1"
+          (click)="eliminarCliente()"
+          label="Atender cliente"
+        ></button>
+        <button
+          pButton
+          class="p-button p-button-danger p-button-rounded ml-3"
+          (click)="agregarCliente()"
+        >
+          Encolar cliente
+        </button>
+      </div>
+    </p-fieldset>
+  </div>
+
+
+  <div class="col-12 sm:col-9 md:col-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <b>Original</b>
+      <pre>{{clientes}}</pre>
+      <b>slice:0</b>
+      <pre>{{ clientes | slice:0 }}</pre>
+
+      <b>slice:0:2</b>
+      <pre>{{ clientes | slice:0:2 }}</pre>
+
+
+      <b>slice:1:2</b>
+      <pre>{{ clientes | slice:1:2 }}</pre>
+
     </p-fieldset>
   </div>
 </div>

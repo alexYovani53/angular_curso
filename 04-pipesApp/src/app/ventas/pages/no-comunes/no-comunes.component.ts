@@ -25,4 +25,24 @@ export class NoComunesComponent {
     '=2': 'tenemos dos clientes esperando.',
     'other': 'tenemos # clientes esperando.'
   }
+
+  cambiarNombre() {
+    if (this.nombre == 'Alex') {
+      this.nombre = 'Yarali';
+      this.genero = 'femenino';
+    } else {
+      this.nombre = 'Alex';
+      this.genero = 'masculino';
+    }
+  }
+
+  eliminarCliente() {
+    if (this.clientes.length == 0) return;
+    this.clientes.pop();
+  }
+
+  agregarCliente() {
+    this.clientes.push("Nuevo");
+  }
+
 }
