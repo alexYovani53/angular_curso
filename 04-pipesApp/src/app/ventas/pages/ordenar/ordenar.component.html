@@ -28,16 +28,68 @@
     </code>
 
   </pre>
-  <button
-    pButton
-    type="button"
-    (click)="toggle()"
-    label="Cambiar"
-    class="p-button p-button-danger p-button-rounded"
-  ></button>
 
   <pre>
     <b>{{'{{ "Pipe Personalizado" | mayusculas:aplicarMayuscula }}'}} : </b>
     <b>{{ "Pipe Personalizado" | mayusculas:aplicarMayuscula }} </b>
   </pre>
+</div>
+
+<p-toolbar>
+  <div class="p-toolbar-group-start"></div>
+
+  <div class="p-toolbar-group-end">
+    <button
+      pButton
+      type="button"
+      (click)="toggle()"
+      label="Cambiar"
+      class="mr-1 p-button p-button-danger p-button-rounded"
+    ></button>
+
+    <button
+      pButton
+      icon="pi pi-sort"
+      label="Por nombre"
+      class="mr-1"
+      (click)="cambiarOrden('nombre')"
+    ></button>
+
+    <button
+      pButton
+      icon="pi pi-sort"
+      label="Vuela"
+      (click)="cambiarOrden('vuela')"
+      class="mr-1 p-button-success"
+    ></button>
+
+    <button
+      pButton
+      icon="pi pi-sort"
+      label="Por color"
+      class="mr-1 p-button-warning"
+      (click)="cambiarOrden('color')"
+    ></button>
+  </div>
+</p-toolbar>
+
+<div class="grid">
+  <div class="col-12 mt-2">
+    <p-table [value]="heroes | ordenarPipe: ordenarPor">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nombre</th>
+          <th>Vuela</th>
+          <th>Color</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-heroe>
+        <tr>
+          <td>{{ heroe.nombre }}</td>
+          <td>{{ heroe.vuela | vuelaPipe | titlecase }}</td>
+          <td>{{ heroe.color | colorPipe }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>
