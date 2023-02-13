@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class OrdenarComponent {
 
+  aplicarMayuscula: boolean = false;
+
+  toggle(){
+    this.aplicarMayuscula = !this.aplicarMayuscula;
+  }
+
 }

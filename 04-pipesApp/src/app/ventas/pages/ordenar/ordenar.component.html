@@ -1,1 +1,43 @@
-<p>ordenar works!</p>
+<div class="text-layout">
+  <h1>Pipes personalizados</h1>
+  <p>Pipes creados por nosotros</p>
+  <pre>
+    <b>{{'{{ "Pipe Personalizado" | mayusculas }}'}} : </b>
+    <b>{{ "Pipe Personalizado" | mayusculas }} </b>
+  </pre>
+  <pre>
+    <b>{{'{{ "Pipe Personalizado" | mayusculas:false }}'}} : </b>
+    <b>{{ "Pipe Personalizado" | mayusculas:false }} </b>
+  </pre>
+
+  <pre>
+    <code>
+      {{
+        "import { Pipe, PipeTransform } from '@angular/core';
+
+      @Pipe({
+        name: 'mayusculas'
+      })
+      export class MayusculasPipe implements PipeTransform {
+        //transform(value: string, ...args: any[])
+        transform(value: string, enMayusculas: boolean = true) {
+          return value.toUpperCase();
+        }
+      }"
+      }}
+    </code>
+
+  </pre>
+  <button
+    pButton
+    type="button"
+    (click)="toggle()"
+    label="Cambiar"
+    class="p-button p-button-danger p-button-rounded"
+  ></button>
+
+  <pre>
+    <b>{{'{{ "Pipe Personalizado" | mayusculas:aplicarMayuscula }}'}} : </b>
+    <b>{{ "Pipe Personalizado" | mayusculas:aplicarMayuscula }} </b>
+  </pre>
+</div>
