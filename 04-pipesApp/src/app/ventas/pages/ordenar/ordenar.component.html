@@ -75,12 +75,39 @@
 
 <div class="grid">
   <div class="col-12 mt-2">
-    <p-table [value]="heroes | ordenarPipe: ordenarPor">
+    <p-table [value]="heroes | ordenarPipe : ordenarPor">
       <ng-template pTemplate="header">
         <tr>
           <th>Nombre</th>
           <th>Vuela</th>
           <th>Color</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-heroe>
+        <tr>
+          <td>{{ heroe.nombre }}</td>
+          <td>{{ heroe.vuela | vuelaPipe | titlecase }}</td>
+          <td>{{ heroe.color | colorPipe }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 mt-2">
+    <p-table [value]="heroes | slice : 0">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="nombre">
+            Nombre <p-sortIcon field="code"></p-sortIcon>
+          </th>
+          <th pSortableColumn="vuela">
+            Vuela <p-sortIcon field="code"></p-sortIcon>
+          </th>
+          <th pSortableColumn="color">
+            Color <p-sortIcon field="code"></p-sortIcon>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-heroe>
