@@ -7,5 +7,7 @@ import { Heroe } from '../../interfaces/herores.interface';
   styleUrls: ['./heroe-tarjeta.component.css']
 })
 export class HeroeTarjetaComponent {
-  @Input() heroe?: Heroe;
+  // @Input() heroe: Heroe | undefined;
+  // @Input() heroe?: Heroe;
+  @Input() heroe!: Heroe;
 }
