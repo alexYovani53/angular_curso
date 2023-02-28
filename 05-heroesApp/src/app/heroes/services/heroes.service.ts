@@ -29,6 +29,4 @@ export class HeroesService {
   update(heroe: Heroe): Observable<Heroe>{
     return this.http.put<Heroe>(`${environment.baseUrl}/heroes/${heroe.id}`, heroe);
   }
-
-
 }
