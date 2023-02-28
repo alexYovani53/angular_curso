@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Heroe, Publisher } from '../../interfaces/herores.interface';
 import { HeroesService } from '../../services/heroes.service';
@@ -33,7 +33,9 @@ export class AgregarComponent implements OnInit {
 
   editando: boolean = false;
 
-  constructor(private hService: HeroesService, private aRoute: ActivatedRoute) { }
+  constructor(private hService: HeroesService,
+    private aRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.aRoute.params.pipe(
@@ -59,7 +61,9 @@ export class AgregarComponent implements OnInit {
     }
 
     this.hService.saveHero(this.heroe).subscribe(
-      (e) => this.heroe = e
+      (e) => {
+        this.router.navigate(['/heroes/editar', e.id])
+      }
     )
     console.log(this.heroe);
   }
