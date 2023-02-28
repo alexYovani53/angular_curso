@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Heroe } from '../interfaces/herores.interface';
 import { HeroesService } from '../services/heroes.service';
 
-@Pipe({ name: 'heroePipe' })
+@Pipe({ name: 'heroePipe', pure: false })
 export class HeroePipe implements PipeTransform {
   constructor(private hService: HeroesService) {
 
