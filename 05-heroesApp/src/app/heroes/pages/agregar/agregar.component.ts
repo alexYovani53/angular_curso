@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
 import { Heroe, Publisher } from '../../interfaces/herores.interface';
 import { HeroesService } from '../../services/heroes.service';
 
@@ -8,7 +10,7 @@ import { HeroesService } from '../../services/heroes.service';
   styles: [
   ]
 })
-export class AgregarComponent {
+export class AgregarComponent implements OnInit {
 
   publishers = [
     {
@@ -29,7 +31,19 @@ export class AgregarComponent {
     alter_ego: ''
   }
 
-  constructor(private hService: HeroesService) {
+  editando: boolean = false;
+
+  constructor(private hService: HeroesService, private aRoute: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.aRoute.params.pipe(
+      switchMap(({ id }) => this.hService.getHeroePorId(id))
+    ).subscribe(
+      (heroe) => {
+        this.editando = true;
+        this.heroe = heroe
+      }
+    )
 
   }
 
@@ -38,10 +52,15 @@ export class AgregarComponent {
       return;
     }
 
+    if (this.heroe.id != undefined) {
+      // Actualizando
+      this.hService.update(this.heroe).subscribe((rsp) => this.heroe = rsp)
+      return;
+    }
+
     this.hService.saveHero(this.heroe).subscribe(
       (e) => this.heroe = e
     )
-
     console.log(this.heroe);
   }
 
