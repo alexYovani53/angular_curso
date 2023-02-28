@@ -27,12 +27,12 @@ export class HeroeComponent implements OnInit {
     // })
     this.activatedRoute.params
       .pipe(
-        switchMap(({ id }) => this.hService.getHeroe(id))
+        switchMap(({ id }) => this.hService.getHeroePorId(id))
       )
       .subscribe((heroe) => this.heroe = heroe)
   }
 
-  back(){
+  back() {
     this.router.navigate(['/heroes/listado'])
   }
 }

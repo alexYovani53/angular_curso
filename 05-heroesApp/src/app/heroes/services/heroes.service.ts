@@ -14,7 +14,11 @@ export class HeroesService {
   getHeroes(): Observable<Heroe[]> {
     return this.http.get<Heroe[]>(`${environment.baseUrl}/heroes`)
   }
-  getHeroe(id: String): Observable<Heroe> {
+  getHeroePorId(id: String): Observable<Heroe> {
     return this.http.get<Heroe>(`${environment.baseUrl}/heroes/${id}`)
+  }
+
+  getSugerencias(termino: string): Observable<Heroe[]> {
+    return this.http.get<Heroe[]>(`${environment.baseUrl}/heroes?q=${termino}&_limit=6`)
   }
 }
