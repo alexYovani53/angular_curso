@@ -81,10 +81,19 @@ export class AgregarComponent implements OnInit {
   }
 
   delete() {
-    this.matDialog.open(ConfirmarComponent, {
-      width: '350px', height:'250px'
+    const dialog = this.matDialog.open(ConfirmarComponent, {
+      width: '350px',
+      height:'250px',
+      data: this.heroe
     })
-    // this.hService.delete(this.heroe.id!).subscribe((rsp) => this.router.navigate(["/heroes"]));
+
+    dialog.afterClosed().subscribe(
+      (result)=>{
+        if(result){
+          this.hService.delete(this.heroe.id!).subscribe((rsp) => this.router.navigate(["/heroes"]));
+        }
+      }
+    )
   }
 
   mostrarSnakBar(mensaje: string) {
