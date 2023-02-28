@@ -43,11 +43,18 @@
 
     <br>
 
-    <button mat-raised-button color="warn" (click)="save()">
-      <mat-icon>save</mat-icon>
-      {{ !editando ? "Guardar" : "Actualizar" }}
-    </button>
+    <div fxLayout>
+      <button mat-raised-button color="warn" (click)="save()">
+        <mat-icon>save</mat-icon>
+        {{ !editando ? "Guardar" : "Actualizar" }}
+      </button>
+      <span class="spacer"></span>
+      <button mat-raised-button color="primary" *ngIf="editando" (click)="delete()">
+        <mat-icon>delete</mat-icon>
+        Eliminar
+      </button>
 
+    </div>
   </div>
 
   <!-- Imagen -->
