@@ -13,16 +13,20 @@ export class BuscarComponent {
 
   termino: string = "";
   heroes: Heroe[] = [];
-  heroeSeleccionado!: Heroe;
+  heroeSeleccionado: Heroe | undefined;
 
   constructor(private hService: HeroesService) { }
 
   buscando() {
-    this.hService.getSugerencias(this.termino).subscribe(
+    this.hService.getSugerencias(this.termino.trim()).subscribe(
       (heroes) => this.heroes = heroes
     )
   }
   opcionSeleccionada(event: MatAutocompleteSelectedEvent) {
+    if (event.option.value === "") {
+      this.heroeSeleccionado = undefined;
+      return;
+    }
     const heroe: Heroe = event.option.value;
     console.log(heroe);
     this.termino = heroe.alter_ego;
