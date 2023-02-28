@@ -21,4 +21,9 @@ export class HeroesService {
   getSugerencias(termino: string): Observable<Heroe[]> {
     return this.http.get<Heroe[]>(`${environment.baseUrl}/heroes?q=${termino}&_limit=6`)
   }
+
+  saveHero(heroe: Heroe): Observable<Heroe>{
+    return this.http.post<Heroe>(`${environment.baseUrl}/heroes`, heroe);
+  }
+
 }
